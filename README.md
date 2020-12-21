@@ -13,7 +13,7 @@ Make sure you have NI Multisim 14.2 or above installed on your system. Open the 
 8. A new hour is conveyed by the blinking of the LCD display.
 
 ## Circuit Diagram
-![alt text](<https://github.com/nehemgr/Elevator-Control-System/blob/main/Report/circuit_diagram.jpg>)
+![alt text](<https://github.com/nehemgr/Elevator-Control-System/blob/main/Files/circuit_diagram.jpg>)
 
 ## Project Demo
-![alt text](<https://github.com/nehemgr/Elevator-Control-System/blob/main/Report/sample_run.jpg>)
+![alt text](<https://github.com/nehemgr/Elevator-Control-System/blob/main/Files/sample_run.jpg>)
