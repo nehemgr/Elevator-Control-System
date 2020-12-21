@@ -1,0 +1,426 @@
+     1: #include <htc.h>
+     2: #include <stdlib.h>
+     3: 
+     4: __CONFIG(FOSC_HS & WDTE_OFF & PWRTE_ON & CP_OFF); // Config word
+     5: 
+     6: #define _XTAL_FREQ 20000000 // Define CPU Frequency
+     7: 
+     8: //Physical Parameters
+     9: #define num_floors 4
+    10: #define move_time 1000
+    11: #define max_people 5
+    12: #define num_hours 3
+    13: #define interrupt_time 3000
+    14: 
+    15: //LCD Pins
+    16: #define E RA3
+    17: #define RS RA4
+    18: 
+    19: //LCD Properties
+    20: #define line_size 24
+    21: 
+    22: //LCD Hex Codes
+    23: #define LCD_ON 0x0E
+    24: #define LCD_OFF 0x0A
+    25: #define clear_screen 0x01
+    26: #define cursor_left 0x10
+    27: #define cursor_right 0x14
+    28: #define cursor_forwards 0x06
+    29: #define cursor_backwards 0x04
+    30: #define line2 0xC0
+    31: 
+    32: //Switches Pressed
+    33: #define S1 (RA0 == 0 && RA1 == 0 && RA2 == 0)
+    34: #define S2 (RA0 == 1 && RA1 == 0 && RA2 == 0)
+    35: #define S3 (RA0 == 0 && RA1 == 1 && RA2 == 0)
+    36: #define S4 (RA0 == 1 && RA1 == 1 && RA2 == 0)
+    37: #define S5 (RA0 == 0 && RA1 == 0 && RA2 == 1)
+    38: #define S6 (RA0 == 1 && RA1 == 0 && RA2 == 1)
+    39: #define S7 (RA0 == 0 && RA1 == 1 && RA2 == 1)
+    40: 
+    41: //Switches Names
+    42: #define CONFIRM 7
+    43: 
+    44: void disp_string(const char* c);
+    45: void cmd(char cmd_msg);
+    46: void clr_char(char spaces);
+    47: void initialize();
+    48: void interrupt hour_ISR();
+    49: void button_press();
+    50: void max_prob_floor();
+    51: void call_max();
+    52: void call_min();
+    53: void set_floor();
+    54: void floor_details();
+    55: void moving();
+    56: 
+    57: const char people_msg[] = "People: ";
+    58: const char floor_msg[] = "Flrs: ";
+    59: const char stopped_msg[] = "Stop: Flr ";
+    60: const char moving_msg[] = "Move: Flr ";
+    61: const char reached_msg[] = "Reach: Flr ";
+    62: 
+    63: char temp;
+    64: signed char floor_call[num_floors] = {0};
+    65: signed char cabin_call[num_floors] = {0};
+    66: signed char current_floor;
+    67: signed char destination_floor;
+    68: signed char floor_index;
+    69: signed char floor_direction;
+    70: signed char button;
+    71: signed char i;
+    72: signed char hour;
+    73: signed int counter2;
+    74: bit prob_move;
+    75: signed char prob_matrix[num_floors][num_hours] = {{0}};
+    76: 
+    77: void disp_string(const char* c){
+    78: RS = 1;
+    79: if (*c == NULL){
+    80:     PORTB = temp;
+    81:     E = 1;
+    82:     __delay_us(0.35);
+    83:     E = 0;
+    84:     }
+    85: else {
+    86:     for (; *c != '\0'; c++){
+    87:         PORTB = *c;
+    88:         E = 1;
+    89:         __delay_us(0.35);
+    90:         E = 0;
+    91:         }
+    92:     }
+    93: }
+    94: 
+    95: void cmd(char cmd_msg){
+    96: PORTB = cmd_msg;
+    97: RS = 0;
+    98: E = 1;
+    99: __delay_us(0.35);
+   100: E = 0;
+   101: }
+   102: 
+   103: void clr_char(char spaces){
+   104: cmd(cursor_backwards);
+   105: RS = 1;
+   106: for (i = spaces; i != -1; i--){
+   107:     PORTB = ' ';
+   108:     E = 1;
+   109:     __delay_us(0.35);
+   110:     E = 0;
+   111:     }
+   112: cmd(cursor_forwards);
+   113: cmd(cursor_right);
+   114: }
+   115: 
+   116: void initialize(){
+   117: //MCU
+   118: PORTA = 0x00; //Initialize PORTA pins to 0
+   119: PORTB = 0x00; //Initialize PORTB pins to 0
+   120: TRISB = 0x00; //Set PORTB pins to output mode
+   121: TRISA = 0x07; // Set PORTA pins as: Set A0, A1 and A2 as input mode and Set A3 and A4 as output mode
+   122: 
+   123: //Timer
+   124: TMR0 = 0; //Clear timer overflow counter register
+   125: OPTION_REG = 0x08; //T0CS = 0 - Turn on the Timer0; PSA = 1 - Select WDT as clock; PS2, PS1, PS0 = 0 - For prescaler of 1:1
+   126: T0IE = 1; //Enable Timer 0 interrupts
+   127: GIE = 1; //Enable global interrupts bit
+   128: }
+   129: 
+   130: void interrupt hour_ISR(){
+   131: counter2--;
+   132: if (counter2 == 0){
+   133:     counter2 = interrupt_time;
+   134:     hour++;
+   135:     if (hour == num_hours)
+   136:         hour = 0;
+   137:     cmd(LCD_OFF);
+   138:     __delay_ms(2);
+   139:     cmd(LCD_ON);
+   140:     }
+   141: T0IF = 0;
+   142: GIE = 1;
+   143: }
+   144: 
+   145: void button_press(){
+   146: button = -1;
+   147: floor_index = -1;
+   148: floor_direction = -1;
+   149: 
+   150: if (S1)
+   151:     button = 1;
+   152: else if (S2)
+   153:     button = 2;
+   154: else if (S3)
+   155:     button = 3;
+   156: else if (S4)
+   157:     button = 4;
+   158: else if (S5)
+   159:     button = 5;
+   160: else if (S6)
+   161:     button = 6;
+   162: else if (S7)
+   163:     button = 7;
+   164: 
+   165: if (button != -1){
+   166:     if (button == 1){
+   167:         floor_index = 0;
+   168:         floor_direction = 1;
+   169:         }
+   170:     for (i = num_floors*2 - 3; i != 1; i--){
+   171:         if (button == i){
+   172:             floor_index = i >> 1; 
+   173:             floor_direction = 1;
+   174:             if (i % 2 != 0)
+   175:                 floor_direction = 2;
+   176:             break;
+   177:             }
+   178:         }
+   179:     if (button == num_floors*2 - 2){
+   180:         floor_index = num_floors - 1;
+   181:         floor_direction = 2;
+   182:         }
+   183:     }
+   184: }
+   185: 
+   186: void max_prob_floor(){
+   187: prob_move = 1;
+   188: destination_floor = num_floors - 1;
+   189: for (i = num_floors - 2; i != -1; i--){
+   190:     if (prob_matrix[i][hour] > prob_matrix[destination_floor][hour])
+   191:         destination_floor = i;
+   192:     }
+   193: if ((prob_matrix[destination_floor][hour] == 0) || (current_floor == destination_floor)){
+   194:     destination_floor = -1;
+   195:     prob_move = 0;
+   196:     }
+   197: }
+   198: 
+   199: void call_max(){
+   200: for (i = num_floors - 1; i > -1; i--){
+   201:     if ((cabin_call[i] != 0) || (floor_call[i] != 0)){
+   202:         destination_floor = i;
+   203:         break;
+   204:         }
+   205:     }
+   206: }
+   207: 
+   208: void call_min(){
+   209: for (i = num_floors - 1; i > -1; i--){
+   210:     if ((cabin_call[i] != 0) || (floor_call[i] != 0))
+   211:         destination_floor = i;
+   212:     }
+   213: }
+   214: 
+   215: void set_floor(){
+   216: if ((floor_call[floor_index] != floor_direction) && (floor_call[floor_index] < 3)){
+   217:     if (floor_call[floor_index] == 2)
+   218:         floor_call[floor_index] = 3;
+   219:     floor_call[floor_index] += floor_direction;
+   220:     if (prob_move){
+   221:         destination_floor = floor_index;
+   222:         prob_move = 0;
+   223:         }
+   224:     if (destination_floor != -1){
+   225:         if (((current_floor < destination_floor) && ((floor_direction == floor_call[destination_floor]) || (floor_call[destination_floor] > 2) || (floor_index == num_floors - 1)) && (floor_index > destination_floor))
+   226:             || ((current_floor > destination_floor) && ((floor_direction == floor_call[destination_floor]) || (floor_call[destination_floor] > 2) || (floor_index == 0)) && (floor_index < destination_floor)))
+   227:             destination_floor = floor_index;
+   228:         }
+   229:     }
+   230: }
+   231: 
+   232: void floor_details(){
+   233: cmd(line2);
+   234: signed char j = 0;
+   235: temp = '0';
+   236: disp_string(&people_msg);
+   237: disp_string(NULL);
+   238: button_press();
+   239: while (button != CONFIRM){
+   240:     if (button != -1){
+   241:         if (floor_index == current_floor){
+   242:             if (button % 2 != 0 && button != 1){
+   243:                 if (j == 0)
+   244:                     j = max_people + 1;
+   245:                 j--;
+   246:                 }
+   247:             else {
+   248:                 if (j == max_people)
+   249:                     j = -1;
+   250:                 j++;  
+   251:                 }
+   252:             clr_char(1);
+   253:             temp = j + '0';
+   254:             disp_string(NULL);
+   255:             }
+   256:         else 
+   257:             set_floor();
+   258:         }
+   259:     button_press();
+   260:     }
+   261: prob_matrix[current_floor][hour] += j;
+   262: clr_char(9); //strlen("People: 0")
+   263: j = 0;
+   264: if (current_floor == 0)
+   265:     j = 1;
+   266: temp = j + '0';
+   267: disp_string(&floor_msg);
+   268: disp_string(NULL);
+   269: while (1){
+   270:     button_press();
+   271:     if (button != -1){
+   272:         if (floor_index == current_floor){
+   273:             if (button % 2 != 0 && button != 1){
+   274:                 if (j == 0)
+   275:                     j = num_floors + 1;
+   276:                 j--;
+   277:                 if (j == current_floor){
+   278:                     if (j == 0)
+   279:                         j = num_floors + 1;
+   280:                     j--;
+   281:                     }
+   282:                 }
+   283:             else {
+   284:                 if (j == num_floors)
+   285:                     j = -1;
+   286:                 j++;
+   287:                 if (j == current_floor)
+   288:                     j++;
+   289:                 }
+   290:             clr_char(1);
+   291:             if (j == num_floors){
+   292:                 temp = 'X';
+   293:                 disp_string(NULL);
+   294:                 }
+   295:             else {
+   296:                 temp = j + '0';
+   297:                 disp_string(NULL);
+   298:                 }
+   299:             }
+   300:         else if (button == CONFIRM){
+   301:             if (j == num_floors)
+   302:                 break;
+   303:             else {
+   304:                 cabin_call[j] = 1;
+   305:                 if (current_floor > j)
+   306:                     cabin_call[j] = 2;
+   307:                 }
+   308:             }
+   309:         else
+   310:             set_floor();
+   311:         }
+   312:     }
+   313: clr_char(7); //strlen("Flrs: X")
+   314: }
+   315: 
+   316: void moving(){
+   317: int counter = move_time;
+   318: while (current_floor != destination_floor){
+   319:     cmd(clear_screen);
+   320:     temp = current_floor + '0';
+   321:     disp_string(&moving_msg);
+   322:     disp_string(NULL);
+   323:     while (counter != 0){
+   324:         counter--;
+   325:         button_press();
+   326:         if ((button != -1) && (button != CONFIRM)){
+   327:             set_floor();
+   328:             }
+   329:         if ((floor_call[current_floor] > 2) || ((current_floor < destination_floor) && (floor_call[current_floor] == 1)) || ((current_floor > destination_floor) && (floor_call[current_floor] == 2))){
+   330:             if ((current_floor < destination_floor) && (floor_call[current_floor] >= 3))
+   331:                 floor_call[current_floor] = 2;
+   332:             else if ((current_floor > destination_floor) && (floor_call[current_floor] >= 3))
+   333:                 floor_call[current_floor] = 1;
+   334:             else
+   335:                 floor_call[current_floor] = 0;
+   336:             cabin_call[current_floor] = 0;
+   337:             cmd(clear_screen);
+   338:             disp_string(&reached_msg);
+   339:             disp_string(NULL);
+   340:             floor_details();
+   341:             cmd(clear_screen);
+   342:             temp = current_floor + '0';
+   343:             disp_string(&moving_msg);
+   344:             disp_string(NULL);
+   345:             }
+   346:         if (cabin_call[current_floor] != 0){
+   347:             cabin_call[current_floor] = 0;
+   348:             cmd(clear_screen);
+   349:             disp_string(&reached_msg);
+   350:             disp_string(NULL);
+   351:             __delay_ms(5);
+   352:             cmd(clear_screen);
+   353:             disp_string(&moving_msg);
+   354:             disp_string(NULL);
+   355:             }
+   356:         }
+   357:     counter = move_time;
+   358:     current_floor = current_floor + ((destination_floor - current_floor > 0) - (destination_floor - current_floor < 0));
+   359:     }
+   360: cmd(clear_screen);
+   361: temp = destination_floor + '0';
+   362: disp_string(&reached_msg);
+   363: disp_string(NULL);
+   364: prob_move = 0;
+   365: destination_floor = -1;
+   366: if (floor_call[current_floor] != 0){
+   367:     cabin_call[current_floor] = 0;
+   368:     floor_details();
+   369:     if (floor_call[current_floor] % 2 == 0){
+   370:         if (floor_call[current_floor] == 4)
+   371:             floor_call[current_floor] = 3;
+   372:         floor_call[current_floor] -= 2;    
+   373:         call_min();
+   374:         }
+   375:     else {
+   376:         floor_call[current_floor] -= 1; 
+   377:         call_max();
+   378:         }
+   379:     }
+   380: else if (cabin_call[current_floor] != 0){
+   381:     if (cabin_call[current_floor] == 1){
+   382:         cabin_call[current_floor] = 0;
+   383:         call_min();
+   384:         }
+   385:     else {
+   386:         cabin_call[current_floor] = 0;
+   387:         call_max();
+   388:         }
+   389:     __delay_ms(5);
+   390:     }
+   391: if ((current_floor < destination_floor) && (destination_floor != -1))
+   392:     call_max();
+   393: else if ((current_floor > destination_floor) && (destination_floor != -1))
+   394:     call_min();
+   395: if (destination_floor == -1)
+   396:     max_prob_floor();
+   397: }
+   398: 
+   399: void main(){
+   400: initialize();
+   401: hour = 0;
+   402: counter2 = interrupt_time;
+   403: prob_move = 0;
+   404: current_floor = 0;
+   405: destination_floor = -1;
+   406: i = -10;
+   407: while (1){
+   408:     button_press();
+   409:     if ((button != -1) && (button != CONFIRM)){
+   410:         floor_call[floor_index] = floor_direction;
+   411:         destination_floor = floor_index;
+   412:         }
+   413:     while (destination_floor != -1){
+   414:             moving();
+   415:             i = -10;
+   416:         }
+   417:     if (i == -10){
+   418:         i = -9;
+   419:         cmd(clear_screen);
+   420:         temp = current_floor + '0';
+   421:         disp_string(&stopped_msg);
+   422:         disp_string(NULL);
+   423:         }
+   424:     max_prob_floor();
+   425:     }
+   426: }

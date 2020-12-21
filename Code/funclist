@@ -1,0 +1,15 @@
+_floor_details: CODE, 327 0 158
+_clr_char: CODE, 951 0 20
+_moving: CODE, 12 0 293
+_call_min: CODE, 930 0 21
+_main: CODE, 739 0 51
+i1_cmd: CODE, 994 0 9
+_set_floor: CODE, 485 0 93
+_disp_string: CODE, 878 0 30
+_call_max: CODE, 908 0 22
+_cmd: CODE, 985 0 9
+_initialize: CODE, 971 0 14
+_max_prob_floor: CODE, 790 0 41
+_hour_ISR: CODE, 839 0 39
+_button_press: CODE, 590 0 93
+Total: 893

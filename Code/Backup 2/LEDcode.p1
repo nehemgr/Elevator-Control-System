@@ -1,0 +1,1294 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"53 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _INDF `Vuc  1 e@0 ]
+"57 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TMR0 `Vuc  1 e@1 ]
+"61 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PCL `Vuc  1 e@2 ]
+"65 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _STATUS `Vuc  1 e@3 ]
+"67 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _CARRY `Vb  1 e@24 ]
+"68 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _DC `Vb  1 e@25 ]
+"69 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _ZERO `Vb  1 e@26 ]
+"70 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _nPD `Vb  1 e@27 ]
+"71 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _nTO `Vb  1 e@28 ]
+"72 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _IRP `Vb  1 e@31 ]
+"73 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RP0 `Vb  1 e@29 ]
+"74 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RP1 `Vb  1 e@30 ]
+[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S2 . C DC Z nPD nTO RP IRP ]
+[s S3 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S3 . . RP0 RP1 ]
+[u S1 `S2 1 `S3 1 ]
+[n S1 . . . ]
+"91 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _STATUSbits `VS1  1 e@3 ]
+"95 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _FSR `Vuc  1 e@4 ]
+"99 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PORTA `Vuc  1 e@5 ]
+"101 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RA0 `Vb  1 e@40 ]
+"102 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RA1 `Vb  1 e@41 ]
+"103 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RA2 `Vb  1 e@42 ]
+"104 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RA3 `Vb  1 e@43 ]
+"105 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RA4 `Vb  1 e@44 ]
+[s S5 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S5 . RA0 RA1 RA2 RA3 RA4 ]
+[u S4 `S5 1 ]
+[n S4 . . ]
+"115 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PORTAbits `VS4  1 e@5 ]
+"119 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PORTB `Vuc  1 e@6 ]
+"121 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RB0 `Vb  1 e@48 ]
+"122 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RB1 `Vb  1 e@49 ]
+"123 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RB2 `Vb  1 e@50 ]
+"124 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RB3 `Vb  1 e@51 ]
+"125 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RB4 `Vb  1 e@52 ]
+"126 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RB5 `Vb  1 e@53 ]
+"127 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RB6 `Vb  1 e@54 ]
+"128 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RB7 `Vb  1 e@55 ]
+[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S7 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+[u S6 `S7 1 ]
+[n S6 . . ]
+"141 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PORTBbits `VS6  1 e@6 ]
+"145 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _EEDATA `Vuc  1 e@8 ]
+"149 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _EEADR `Vuc  1 e@9 ]
+"153 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PCLATH `Vuc  1 e@10 ]
+[s S9 :5 `uc 1 ]
+[n S9 . PCLATH ]
+[u S8 `S9 1 ]
+[n S8 . . ]
+"160 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PCLATHbits `VS8  1 e@10 ]
+"164 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _INTCON `Vuc  1 e@11 ]
+"166 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RBIF `Vb  1 e@88 ]
+"167 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _INTF `Vb  1 e@89 ]
+"168 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _T0IF `Vb  1 e@90 ]
+"169 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RBIE `Vb  1 e@91 ]
+"170 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _INTE `Vb  1 e@92 ]
+"171 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _T0IE `Vb  1 e@93 ]
+"172 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _EEIE `Vb  1 e@94 ]
+"173 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _GIE `Vb  1 e@95 ]
+"174 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TMR0IF `Vb  1 e@90 ]
+"175 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TMR0IE `Vb  1 e@93 ]
+[s S11 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S11 . RBIF INTF T0IF RBIE INTE T0IE EEIE GIE ]
+[s S12 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S12 . . TMR0IF . TMR0IE ]
+[u S10 `S11 1 `S12 1 ]
+[n S10 . . . ]
+"194 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _INTCONbits `VS10  1 e@11 ]
+"203 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _OPTION_REG `Vuc  1 e@129 ]
+"205 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PSA `Vb  1 e@1035 ]
+"206 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _T0SE `Vb  1 e@1036 ]
+"207 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _T0CS `Vb  1 e@1037 ]
+"208 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _INTEDG `Vb  1 e@1038 ]
+"209 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _nRBPU `Vb  1 e@1039 ]
+"210 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PS0 `Vb  1 e@1032 ]
+"211 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PS1 `Vb  1 e@1033 ]
+"212 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _PS2 `Vb  1 e@1034 ]
+[s S14 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . PS PSA T0SE T0CS INTEDG nRBPU ]
+[s S15 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S15 . PS0 PS1 PS2 ]
+[u S13 `S14 1 `S15 1 ]
+[n S13 . . . ]
+"228 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _OPTION_REGbits `VS13  1 e@129 ]
+"232 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISA `Vuc  1 e@133 ]
+"234 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISA0 `Vb  1 e@1064 ]
+"235 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISA1 `Vb  1 e@1065 ]
+"236 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISA2 `Vb  1 e@1066 ]
+"237 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISA3 `Vb  1 e@1067 ]
+"238 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISA4 `Vb  1 e@1068 ]
+[s S17 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S17 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 ]
+[u S16 `S17 1 ]
+[n S16 . . ]
+"248 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISAbits `VS16  1 e@133 ]
+"252 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISB `Vuc  1 e@134 ]
+"254 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISB0 `Vb  1 e@1072 ]
+"255 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISB1 `Vb  1 e@1073 ]
+"256 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISB2 `Vb  1 e@1074 ]
+"257 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISB3 `Vb  1 e@1075 ]
+"258 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISB4 `Vb  1 e@1076 ]
+"259 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISB5 `Vb  1 e@1077 ]
+"260 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISB6 `Vb  1 e@1078 ]
+"261 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISB7 `Vb  1 e@1079 ]
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+[u S18 `S19 1 ]
+[n S18 . . ]
+"274 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _TRISBbits `VS18  1 e@134 ]
+"278 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _EECON1 `Vuc  1 e@136 ]
+"280 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _RD `Vb  1 e@1088 ]
+"281 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _WR `Vb  1 e@1089 ]
+"282 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _WREN `Vb  1 e@1090 ]
+"283 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _WRERR `Vb  1 e@1091 ]
+"284 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _EEIF `Vb  1 e@1092 ]
+[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . RD WR WREN WRERR EEIF ]
+[u S20 `S21 1 ]
+[n S20 . . ]
+"294 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _EECON1bits `VS20  1 e@136 ]
+"298 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f84a.h
+[v _EECON2 `Vuc  1 e@137 ]
+"57 LEDCode.c
+[v _people_msg `Cuc  -> 0 `x e ]
+"58 LEDCode.c
+[v _floor_msg `Cuc  -> 0 `x e ]
+"59 LEDCode.c
+[v _stopped_msg `Cuc  -> 0 `x e ]
+"60 LEDCode.c
+[v _moving_msg `Cuc  -> 0 `x e ]
+"61 LEDCode.c
+[v _reached_msg `Cuc  -> 0 `x e ]
+"63 LEDCode.c
+[v _temp `uc  1 e ]
+"64 LEDCode.c
+[v _floor_call `c  -> 4 `i e ]
+"65 LEDCode.c
+[v _cabin_call `c  -> 4 `i e ]
+"66 LEDCode.c
+[v _current_floor `c  1 e ]
+"67 LEDCode.c
+[v _destination_floor `c  1 e ]
+"68 LEDCode.c
+[v _floor_index `c  1 e ]
+"69 LEDCode.c
+[v _floor_direction `c  1 e ]
+"70 LEDCode.c
+[v _button `c  1 e ]
+"71 LEDCode.c
+[v _i `c  1 e ]
+"72 LEDCode.c
+[v _hour `c  1 e ]
+"73 LEDCode.c
+[v _counter2 `i  1 e ]
+"74 LEDCode.c
+[v _prob_move `b  1 e ]
+"75 LEDCode.c
+[v F414 `c  -> 3 `i t ]
+"75 LEDCode.c
+[v _prob_matrix `F414  -> 4 `i e ]
+"154 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h
+[v __delay `(v  0 ef1`ul ]
+[p i __delay ]
+[p mainexit ]
+"4 LEDCode.c
+[; 	psect config,class=CONFIG,delta=2 ;#
+[; 	dw 0xFFFE & 0xFFFB & 0xFFF7 & 0xFFFF ;#
+"57
+[i _people_msg
+:U ..
+-> 80 `c
+-> 101 `c
+-> 111 `c
+-> 112 `c
+-> 108 `c
+-> 101 `c
+-> 58 `c
+-> 32 `c
+-> 0 `c
+..
+]
+"58
+[i _floor_msg
+:U ..
+-> 70 `c
+-> 108 `c
+-> 114 `c
+-> 115 `c
+-> 58 `c
+-> 32 `c
+-> 0 `c
+..
+]
+"59
+[i _stopped_msg
+:U ..
+-> 83 `c
+-> 116 `c
+-> 111 `c
+-> 112 `c
+-> 58 `c
+-> 32 `c
+-> 70 `c
+-> 108 `c
+-> 114 `c
+-> 32 `c
+-> 0 `c
+..
+]
+"60
+[i _moving_msg
+:U ..
+-> 77 `c
+-> 111 `c
+-> 118 `c
+-> 101 `c
+-> 58 `c
+-> 32 `c
+-> 70 `c
+-> 108 `c
+-> 114 `c
+-> 32 `c
+-> 0 `c
+..
+]
+"61
+[i _reached_msg
+:U ..
+-> 82 `c
+-> 101 `c
+-> 97 `c
+-> 99 `c
+-> 104 `c
+-> 58 `c
+-> 32 `c
+-> 70 `c
+-> 108 `c
+-> 114 `c
+-> 32 `c
+-> 0 `c
+..
+]
+"64
+[i _floor_call
+:U ..
+-> -> 0 `i `c
+..
+]
+"65
+[i _cabin_call
+:U ..
+-> -> 0 `i `c
+..
+]
+"75
+[i _prob_matrix
+:U ..
+:U ..
+-> -> 0 `i `c
+..
+..
+]
+"77
+[v _disp_string `(v  1 ef1`*Cuc ]
+{
+[e :U _disp_string ]
+[v _c `*Cuc  1 r1 ]
+[f ]
+"78
+[e = _RA4 -> -> 1 `i `b ]
+"79
+[e $ ! == -> *U _c `i -> 0 `i 27  ]
+{
+"80
+[e = _PORTB _temp ]
+"81
+[e = _RA3 -> -> 1 `i `b ]
+"82
+[e ( __delay (1 -> * .0.35 / -> -> 20000000 `l `d .4000000.0 `ul ]
+"83
+[e = _RA3 -> -> 0 `i `b ]
+"84
+}
+[e $U 28  ]
+"85
+[e :U 27 ]
+{
+"86
+{
+[e $U 32  ]
+[e :U 29 ]
+{
+"87
+[e = _PORTB *U _c ]
+"88
+[e = _RA3 -> -> 1 `i `b ]
+"89
+[e ( __delay (1 -> * .0.35 / -> -> 20000000 `l `d .4000000.0 `ul ]
+"90
+[e = _RA3 -> -> 0 `i `b ]
+"91
+}
+"86
+[e ++ _c * -> -> 1 `i `x -> -> # *U _c `i `x ]
+[e :U 32 ]
+[e $ != -> *U _c `ui -> 0 `ui 29  ]
+[e :U 30 ]
+"91
+}
+"92
+}
+[e :U 28 ]
+"93
+[e :UE 26 ]
+}
+"95
+[v _cmd `(v  1 ef1`uc ]
+{
+[e :U _cmd ]
+[v _cmd_msg `uc  1 r1 ]
+[f ]
+"96
+[e = _PORTB _cmd_msg ]
+"97
+[e = _RA4 -> -> 0 `i `b ]
+"98
+[e = _RA3 -> -> 1 `i `b ]
+"99
+[e ( __delay (1 -> * .0.35 / -> -> 20000000 `l `d .4000000.0 `ul ]
+"100
+[e = _RA3 -> -> 0 `i `b ]
+"101
+[e :UE 33 ]
+}
+"103
+[v _clr_char `(v  1 ef1`uc ]
+{
+[e :U _clr_char ]
+[v _spaces `uc  1 r1 ]
+[f ]
+"104
+[e ( _cmd (1 -> -> 4 `i `uc ]
+"105
+[e = _RA4 -> -> 1 `i `b ]
+"106
+{
+[e = _i -> _spaces `c ]
+[e $U 38  ]
+[e :U 35 ]
+{
+"107
+[e = _PORTB -> -> 32 `ui `uc ]
+"108
+[e = _RA3 -> -> 1 `i `b ]
+"109
+[e ( __delay (1 -> * .0.35 / -> -> 20000000 `l `d .4000000.0 `ul ]
+"110
+[e = _RA3 -> -> 0 `i `b ]
+"111
+}
+"106
+[e -- _i -> -> 1 `i `c ]
+[e :U 38 ]
+[e $ != -> _i `i -U -> 1 `i 35  ]
+[e :U 36 ]
+"111
+}
+"112
+[e ( _cmd (1 -> -> 6 `i `uc ]
+"113
+[e ( _cmd (1 -> -> 20 `i `uc ]
+"114
+[e :UE 34 ]
+}
+"116
+[v _initialize `(v  1 ef ]
+{
+[e :U _initialize ]
+[f ]
+"118
+[e = _PORTA -> -> 0 `i `uc ]
+"119
+[e = _PORTB -> -> 0 `i `uc ]
+"120
+[e = _TRISB -> -> 0 `i `uc ]
+"121
+[e = _TRISA -> -> 7 `i `uc ]
+"124
+[e = _TMR0 -> -> 0 `i `uc ]
+"125
+[e = _OPTION_REG -> -> 8 `i `uc ]
+"126
+[e = _T0IE -> -> 1 `i `b ]
+"127
+[e = _GIE -> -> 1 `i `b ]
+"132
+[e :UE 39 ]
+}
+"48
+[v F388 `(v  1 tf ]
+"134
+[v _hour_ISR `IF388  1 e ]
+{
+[e :U _hour_ISR ]
+[f ]
+"135
+[e -- _counter2 -> 1 `i ]
+"136
+[e $ ! == _counter2 -> 0 `i 41  ]
+{
+"137
+[e = _counter2 -> 3000 `i ]
+"138
+[e ++ _hour -> -> 1 `i `c ]
+"139
+[e $ ! == -> _hour `i -> 3 `i 42  ]
+"140
+[e = _hour -> -> 0 `i `c ]
+[e :U 42 ]
+"141
+[e ( _cmd (1 -> -> 10 `i `uc ]
+"142
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"143
+[e ( _cmd (1 -> -> 14 `i `uc ]
+"144
+}
+[e :U 41 ]
+"145
+[e = _T0IF -> -> 0 `i `b ]
+"146
+[e = _GIE -> -> 1 `i `b ]
+"147
+[e :UE 40 ]
+}
+"149
+[v _button_press `(v  1 ef ]
+{
+[e :U _button_press ]
+[f ]
+"150
+[e = _button -> -U -> 1 `i `c ]
+"151
+[e = _floor_index -> -U -> 1 `i `c ]
+"152
+[e = _floor_direction -> -U -> 1 `i `c ]
+"154
+[e $ ! && && == -> _RA0 `i -> 0 `i == -> _RA1 `i -> 0 `i == -> _RA2 `i -> 0 `i 44  ]
+"155
+[e = _button -> -> 1 `i `c ]
+[e $U 45  ]
+"156
+[e :U 44 ]
+[e $ ! && && == -> _RA0 `i -> 1 `i == -> _RA1 `i -> 0 `i == -> _RA2 `i -> 0 `i 46  ]
+"157
+[e = _button -> -> 2 `i `c ]
+[e $U 47  ]
+"158
+[e :U 46 ]
+[e $ ! && && == -> _RA0 `i -> 0 `i == -> _RA1 `i -> 1 `i == -> _RA2 `i -> 0 `i 48  ]
+"159
+[e = _button -> -> 3 `i `c ]
+[e $U 49  ]
+"160
+[e :U 48 ]
+[e $ ! && && == -> _RA0 `i -> 1 `i == -> _RA1 `i -> 1 `i == -> _RA2 `i -> 0 `i 50  ]
+"161
+[e = _button -> -> 4 `i `c ]
+[e $U 51  ]
+"162
+[e :U 50 ]
+[e $ ! && && == -> _RA0 `i -> 0 `i == -> _RA1 `i -> 0 `i == -> _RA2 `i -> 1 `i 52  ]
+"163
+[e = _button -> -> 5 `i `c ]
+[e $U 53  ]
+"164
+[e :U 52 ]
+[e $ ! && && == -> _RA0 `i -> 1 `i == -> _RA1 `i -> 0 `i == -> _RA2 `i -> 1 `i 54  ]
+"165
+[e = _button -> -> 6 `i `c ]
+[e $U 55  ]
+"166
+[e :U 54 ]
+[e $ ! && && == -> _RA0 `i -> 0 `i == -> _RA1 `i -> 1 `i == -> _RA2 `i -> 1 `i 56  ]
+"167
+[e = _button -> -> 7 `i `c ]
+[e :U 56 ]
+"169
+[e :U 55 ]
+[e :U 53 ]
+[e :U 51 ]
+[e :U 49 ]
+[e :U 47 ]
+[e :U 45 ]
+[e $ ! != -> _button `i -U -> 1 `i 57  ]
+{
+"170
+[e $ ! == -> _button `i -> 1 `i 58  ]
+{
+"171
+[e = _floor_index -> -> 0 `i `c ]
+"172
+[e = _floor_direction -> -> 1 `i `c ]
+"173
+}
+[e :U 58 ]
+"174
+{
+[e = _i -> - * -> 4 `i -> 2 `i -> 3 `i `c ]
+[e $ != -> _i `i -> 1 `i 59  ]
+[e $U 60  ]
+[e :U 59 ]
+{
+"175
+[e $ ! == -> _button `i -> _i `i 62  ]
+{
+"176
+[e = _floor_index -> >> -> _i `i -> 1 `i `c ]
+"177
+[e = _floor_direction -> -> 1 `i `c ]
+"178
+[e $ ! != % -> _i `i -> 2 `i -> 0 `i 63  ]
+"179
+[e = _floor_direction -> -> 2 `i `c ]
+[e :U 63 ]
+"180
+[e $U 60  ]
+"181
+}
+[e :U 62 ]
+"182
+}
+"174
+[e -- _i -> -> 1 `i `c ]
+[e $ != -> _i `i -> 1 `i 59  ]
+[e :U 60 ]
+"182
+}
+"183
+[e $ ! == -> _button `i - * -> 4 `i -> 2 `i -> 2 `i 64  ]
+{
+"184
+[e = _floor_index -> - -> 4 `i -> 1 `i `c ]
+"185
+[e = _floor_direction -> -> 2 `i `c ]
+"186
+}
+[e :U 64 ]
+"187
+}
+[e :U 57 ]
+"188
+[e :UE 43 ]
+}
+"190
+[v _max_prob_floor `(v  1 ef ]
+{
+[e :U _max_prob_floor ]
+[f ]
+"191
+[e = _prob_move -> -> 1 `i `b ]
+"192
+[e = _destination_floor -> - -> 4 `i -> 1 `i `c ]
+"193
+{
+[e = _i -> - -> 4 `i -> 2 `i `c ]
+[e $ != -> _i `i -U -> 1 `i 66  ]
+[e $U 67  ]
+[e :U 66 ]
+{
+"194
+[e $ ! > -> *U + &U *U + &U _prob_matrix * -> -> _i `uc `ux -> * -> # *U &U *U &U _prob_matrix `ui -> -> 3 `i `ui `ux * -> -> _hour `uc `ux -> -> # *U &U *U + &U _prob_matrix * -> -> _i `uc `ux -> * -> # *U &U *U &U _prob_matrix `ui -> -> 3 `i `ui `ux `ui `ux `i -> *U + &U *U + &U _prob_matrix * -> -> _destination_floor `uc `ux -> * -> # *U &U *U &U _prob_matrix `ui -> -> 3 `i `ui `ux * -> -> _hour `uc `ux -> -> # *U &U *U + &U _prob_matrix * -> -> _destination_floor `uc `ux -> * -> # *U &U *U &U _prob_matrix `ui -> -> 3 `i `ui `ux `ui `ux `i 69  ]
+"195
+[e = _destination_floor _i ]
+[e :U 69 ]
+"196
+}
+"193
+[e -- _i -> -> 1 `i `c ]
+[e $ != -> _i `i -U -> 1 `i 66  ]
+[e :U 67 ]
+"196
+}
+"197
+[e $ ! || == -> *U + &U *U + &U _prob_matrix * -> -> _destination_floor `uc `ux -> * -> # *U &U *U &U _prob_matrix `ui -> -> 3 `i `ui `ux * -> -> _hour `uc `ux -> -> # *U &U *U + &U _prob_matrix * -> -> _destination_floor `uc `ux -> * -> # *U &U *U &U _prob_matrix `ui -> -> 3 `i `ui `ux `ui `ux `i -> 0 `i == -> _current_floor `i -> _destination_floor `i 70  ]
+{
+"198
+[e = _destination_floor -> -U -> 1 `i `c ]
+"199
+[e = _prob_move -> -> 0 `i `b ]
+"200
+}
+[e :U 70 ]
+"201
+[e :UE 65 ]
+}
+"203
+[v _call_max `(v  1 ef ]
+{
+[e :U _call_max ]
+[f ]
+"204
+{
+[e = _i -> - -> 4 `i -> 1 `i `c ]
+[e $ > -> _i `i -U -> 1 `i 72  ]
+[e $U 73  ]
+[e :U 72 ]
+{
+"205
+[e $ ! || != -> *U + &U _cabin_call * -> -> _i `uc `ux -> -> # *U &U _cabin_call `ui `ux `i -> 0 `i != -> *U + &U _floor_call * -> -> _i `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 0 `i 75  ]
+{
+"206
+[e = _destination_floor _i ]
+"207
+[e $U 73  ]
+"208
+}
+[e :U 75 ]
+"209
+}
+"204
+[e -- _i -> -> 1 `i `c ]
+[e $ > -> _i `i -U -> 1 `i 72  ]
+[e :U 73 ]
+"209
+}
+"210
+[e :UE 71 ]
+}
+"212
+[v _call_min `(v  1 ef ]
+{
+[e :U _call_min ]
+[f ]
+"213
+{
+[e = _i -> - -> 4 `i -> 1 `i `c ]
+[e $ > -> _i `i -U -> 1 `i 77  ]
+[e $U 78  ]
+[e :U 77 ]
+{
+"214
+[e $ ! || != -> *U + &U _cabin_call * -> -> _i `uc `ux -> -> # *U &U _cabin_call `ui `ux `i -> 0 `i != -> *U + &U _floor_call * -> -> _i `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 0 `i 80  ]
+"215
+[e = _destination_floor _i ]
+[e :U 80 ]
+"216
+}
+"213
+[e -- _i -> -> 1 `i `c ]
+[e $ > -> _i `i -U -> 1 `i 77  ]
+[e :U 78 ]
+"216
+}
+"217
+[e :UE 76 ]
+}
+"219
+[v _set_floor `(v  1 ef ]
+{
+[e :U _set_floor ]
+[f ]
+"220
+[e $ ! && != -> *U + &U _floor_call * -> -> _floor_index `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> _floor_direction `i < -> *U + &U _floor_call * -> -> _floor_index `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 3 `i 82  ]
+{
+"221
+[e $ ! == -> *U + &U _floor_call * -> -> _floor_index `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 2 `i 83  ]
+"222
+[e = *U + &U _floor_call * -> -> _floor_index `uc `ux -> -> # *U &U _floor_call `ui `ux -> -> 3 `i `c ]
+[e :U 83 ]
+"223
+[e =+ *U + &U _floor_call * -> -> _floor_index `uc `ux -> -> # *U &U _floor_call `ui `ux _floor_direction ]
+"224
+[e $ ! _prob_move 84  ]
+{
+"225
+[e = _destination_floor _floor_index ]
+"226
+[e = _prob_move -> -> 0 `i `b ]
+"227
+}
+[e $U 85  ]
+"228
+[e :U 84 ]
+[e $ ! != -> _destination_floor `i -U -> 1 `i 86  ]
+{
+"230
+[e $ ! || && && < -> _current_floor `i -> _destination_floor `i || || == -> _floor_direction `i -> *U + &U _floor_call * -> -> _destination_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i > -> *U + &U _floor_call * -> -> _destination_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 2 `i == -> _floor_index `i - -> 4 `i -> 1 `i > -> _floor_index `i -> _destination_floor `i && && > -> _current_floor `i -> _destination_floor `i || || == -> _floor_direction `i -> *U + &U _floor_call * -> -> _destination_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i > -> *U + &U _floor_call * -> -> _destination_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 2 `i == -> _floor_index `i -> 0 `i < -> _floor_index `i -> _destination_floor `i 87  ]
+"231
+[e = _destination_floor _floor_index ]
+[e :U 87 ]
+"234
+}
+[e :U 86 ]
+"235
+[e :U 85 ]
+}
+[e :U 82 ]
+"236
+[e :UE 81 ]
+}
+"238
+[v _floor_details `(v  1 ef ]
+{
+[e :U _floor_details ]
+[f ]
+"239
+[e ( _cmd (1 -> -> 192 `i `uc ]
+"240
+[v _j `c  1 a ]
+[e = _j -> -> 0 `i `c ]
+"241
+[e = _temp -> -> 48 `ui `uc ]
+"242
+[e ( _disp_string (1 &U _people_msg ]
+"243
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"244
+[e ( _button_press ..  ]
+"245
+[e $U 89  ]
+[e :U 90 ]
+{
+"246
+[e $ ! != -> _button `i -U -> 1 `i 92  ]
+{
+"247
+[e $ ! == -> _floor_index `i -> _current_floor `i 93  ]
+{
+"248
+[e $ ! && != % -> _button `i -> 2 `i -> 0 `i != -> _button `i -> 1 `i 94  ]
+{
+"249
+[e $ ! == -> _j `i -> 0 `i 95  ]
+"250
+[e = _j -> + -> 5 `i -> 1 `i `c ]
+[e :U 95 ]
+"251
+[e -- _j -> -> 1 `i `c ]
+"252
+}
+[e $U 96  ]
+"253
+[e :U 94 ]
+{
+"254
+[e $ ! == -> _j `i -> 5 `i 97  ]
+"255
+[e = _j -> -U -> 1 `i `c ]
+[e :U 97 ]
+"256
+[e ++ _j -> -> 1 `i `c ]
+"257
+}
+[e :U 96 ]
+"258
+[e ( _clr_char (1 -> -> 1 `i `uc ]
+"259
+[e = _temp -> + -> -> _j `i `ui -> 48 `ui `uc ]
+"260
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"261
+}
+[e $U 98  ]
+"262
+[e :U 93 ]
+"263
+[e ( _set_floor ..  ]
+[e :U 98 ]
+"264
+}
+[e :U 92 ]
+"265
+[e ( _button_press ..  ]
+"266
+}
+[e :U 89 ]
+"245
+[e $ != -> _button `i -> 7 `i 90  ]
+[e :U 91 ]
+"267
+[e =+ *U + &U *U + &U _prob_matrix * -> -> _current_floor `uc `ux -> * -> # *U &U *U &U _prob_matrix `ui -> -> 3 `i `ui `ux * -> -> _hour `uc `ux -> -> # *U &U *U + &U _prob_matrix * -> -> _current_floor `uc `ux -> * -> # *U &U *U &U _prob_matrix `ui -> -> 3 `i `ui `ux `ui `ux _j ]
+"268
+[e ( _clr_char (1 -> -> 9 `i `uc ]
+"269
+[e = _j -> -> 0 `i `c ]
+"270
+[e $ ! == -> _current_floor `i -> 0 `i 99  ]
+"271
+[e = _j -> -> 1 `i `c ]
+[e :U 99 ]
+"272
+[e = _temp -> + -> -> _j `i `ui -> 48 `ui `uc ]
+"273
+[e ( _disp_string (1 &U _floor_msg ]
+"274
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"275
+[e :U 101 ]
+{
+"276
+[e ( _button_press ..  ]
+"277
+[e $ ! != -> _button `i -U -> 1 `i 103  ]
+{
+"278
+[e $ ! == -> _floor_index `i -> _current_floor `i 104  ]
+{
+"279
+[e $ ! && != % -> _button `i -> 2 `i -> 0 `i != -> _button `i -> 1 `i 105  ]
+{
+"280
+[e $ ! == -> _j `i -> 0 `i 106  ]
+"281
+[e = _j -> + -> 4 `i -> 1 `i `c ]
+[e :U 106 ]
+"282
+[e -- _j -> -> 1 `i `c ]
+"283
+[e $ ! == -> _j `i -> _current_floor `i 107  ]
+{
+"284
+[e $ ! == -> _j `i -> 0 `i 108  ]
+"285
+[e = _j -> + -> 4 `i -> 1 `i `c ]
+[e :U 108 ]
+"286
+[e -- _j -> -> 1 `i `c ]
+"287
+}
+[e :U 107 ]
+"288
+}
+[e $U 109  ]
+"289
+[e :U 105 ]
+{
+"290
+[e $ ! == -> _j `i -> 4 `i 110  ]
+"291
+[e = _j -> -U -> 1 `i `c ]
+[e :U 110 ]
+"292
+[e ++ _j -> -> 1 `i `c ]
+"293
+[e $ ! == -> _j `i -> _current_floor `i 111  ]
+"294
+[e ++ _j -> -> 1 `i `c ]
+[e :U 111 ]
+"295
+}
+[e :U 109 ]
+"296
+[e ( _clr_char (1 -> -> 1 `i `uc ]
+"297
+[e $ ! == -> _j `i -> 4 `i 112  ]
+{
+"298
+[e = _temp -> -> 88 `ui `uc ]
+"299
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"300
+}
+[e $U 113  ]
+"301
+[e :U 112 ]
+{
+"302
+[e = _temp -> + -> -> _j `i `ui -> 48 `ui `uc ]
+"303
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"304
+}
+[e :U 113 ]
+"305
+}
+[e $U 114  ]
+"306
+[e :U 104 ]
+[e $ ! == -> _button `i -> 7 `i 115  ]
+{
+"307
+[e $ ! == -> _j `i -> 4 `i 116  ]
+"308
+[e $U 102  ]
+[e $U 117  ]
+"309
+[e :U 116 ]
+{
+"310
+[e = *U + &U _cabin_call * -> -> _j `uc `ux -> -> # *U &U _cabin_call `ui `ux -> -> 1 `i `c ]
+"311
+[e $ ! > -> _current_floor `i -> _j `i 118  ]
+"312
+[e = *U + &U _cabin_call * -> -> _j `uc `ux -> -> # *U &U _cabin_call `ui `ux -> -> 2 `i `c ]
+[e :U 118 ]
+"313
+}
+[e :U 117 ]
+"314
+}
+[e $U 119  ]
+"315
+[e :U 115 ]
+"316
+[e ( _set_floor ..  ]
+[e :U 119 ]
+[e :U 114 ]
+"317
+}
+[e :U 103 ]
+"318
+}
+[e :U 100 ]
+"275
+[e $U 101  ]
+[e :U 102 ]
+"319
+[e ( _clr_char (1 -> -> 7 `i `uc ]
+"320
+[e :UE 88 ]
+}
+"322
+[v _moving `(v  1 ef ]
+{
+[e :U _moving ]
+[f ]
+"323
+[v _counter `i  1 a ]
+[e = _counter -> 1000 `i ]
+"324
+[e $U 121  ]
+[e :U 122 ]
+{
+"325
+[e ( _cmd (1 -> -> 1 `i `uc ]
+"326
+[e = _temp -> + -> -> _current_floor `i `ui -> 48 `ui `uc ]
+"327
+[e ( _disp_string (1 &U _moving_msg ]
+"328
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"329
+[e $U 124  ]
+[e :U 125 ]
+{
+"330
+[e -- _counter -> 1 `i ]
+"331
+[e ( _button_press ..  ]
+"332
+[e $ ! && != -> _button `i -U -> 1 `i != -> _button `i -> 7 `i 127  ]
+{
+"333
+[e ( _set_floor ..  ]
+"334
+}
+[e :U 127 ]
+"335
+[e $ ! || || > -> *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 2 `i && < -> _current_floor `i -> _destination_floor `i == -> *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 1 `i && > -> _current_floor `i -> _destination_floor `i == -> *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 2 `i 128  ]
+{
+"336
+[e $ ! && < -> _current_floor `i -> _destination_floor `i >= -> *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 3 `i 129  ]
+"337
+[e = *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux -> -> 2 `i `c ]
+[e $U 130  ]
+"338
+[e :U 129 ]
+[e $ ! && > -> _current_floor `i -> _destination_floor `i >= -> *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 3 `i 131  ]
+"339
+[e = *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux -> -> 1 `i `c ]
+[e $U 132  ]
+"340
+[e :U 131 ]
+"341
+[e = *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux -> -> 0 `i `c ]
+[e :U 132 ]
+[e :U 130 ]
+"342
+[e = *U + &U _cabin_call * -> -> _current_floor `uc `ux -> -> # *U &U _cabin_call `ui `ux -> -> 0 `i `c ]
+"343
+[e ( _cmd (1 -> -> 1 `i `uc ]
+"344
+[e ( _disp_string (1 &U _reached_msg ]
+"345
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"346
+[e ( _floor_details ..  ]
+"347
+[e ( _cmd (1 -> -> 1 `i `uc ]
+"348
+[e = _temp -> + -> -> _current_floor `i `ui -> 48 `ui `uc ]
+"349
+[e ( _disp_string (1 &U _moving_msg ]
+"350
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"351
+}
+[e :U 128 ]
+"352
+[e $ ! != -> *U + &U _cabin_call * -> -> _current_floor `uc `ux -> -> # *U &U _cabin_call `ui `ux `i -> 0 `i 133  ]
+{
+"353
+[e = *U + &U _cabin_call * -> -> _current_floor `uc `ux -> -> # *U &U _cabin_call `ui `ux -> -> 0 `i `c ]
+"354
+[e ( _cmd (1 -> -> 1 `i `uc ]
+"355
+[e ( _disp_string (1 &U _reached_msg ]
+"356
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"357
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"358
+[e ( _cmd (1 -> -> 1 `i `uc ]
+"359
+[e ( _disp_string (1 &U _moving_msg ]
+"360
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"361
+}
+[e :U 133 ]
+"362
+}
+[e :U 124 ]
+"329
+[e $ != _counter -> 0 `i 125  ]
+[e :U 126 ]
+"363
+[e = _counter -> 1000 `i ]
+"364
+[e = _current_floor -> + -> _current_floor `i - -> > - -> _destination_floor `i -> _current_floor `i -> 0 `i `i -> < - -> _destination_floor `i -> _current_floor `i -> 0 `i `i `c ]
+"365
+}
+[e :U 121 ]
+"324
+[e $ != -> _current_floor `i -> _destination_floor `i 122  ]
+[e :U 123 ]
+"366
+[e ( _cmd (1 -> -> 1 `i `uc ]
+"367
+[e = _temp -> + -> -> _destination_floor `i `ui -> 48 `ui `uc ]
+"368
+[e ( _disp_string (1 &U _reached_msg ]
+"369
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"370
+[e = _prob_move -> -> 0 `i `b ]
+"371
+[e = _destination_floor -> -U -> 1 `i `c ]
+"372
+[e $ ! != -> *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 0 `i 134  ]
+{
+"373
+[e = *U + &U _cabin_call * -> -> _current_floor `uc `ux -> -> # *U &U _cabin_call `ui `ux -> -> 0 `i `c ]
+"374
+[e ( _floor_details ..  ]
+"375
+[e $ ! == % -> *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 2 `i -> 0 `i 135  ]
+{
+"376
+[e $ ! == -> *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux `i -> 4 `i 136  ]
+"377
+[e = *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux -> -> 3 `i `c ]
+[e :U 136 ]
+"378
+[e =- *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux -> -> 2 `i `c ]
+"379
+[e ( _call_min ..  ]
+"380
+}
+[e $U 137  ]
+"381
+[e :U 135 ]
+{
+"382
+[e =- *U + &U _floor_call * -> -> _current_floor `uc `ux -> -> # *U &U _floor_call `ui `ux -> -> 1 `i `c ]
+"383
+[e ( _call_max ..  ]
+"384
+}
+[e :U 137 ]
+"385
+}
+[e $U 138  ]
+"386
+[e :U 134 ]
+[e $ ! != -> *U + &U _cabin_call * -> -> _current_floor `uc `ux -> -> # *U &U _cabin_call `ui `ux `i -> 0 `i 139  ]
+{
+"387
+[e $ ! == -> *U + &U _cabin_call * -> -> _current_floor `uc `ux -> -> # *U &U _cabin_call `ui `ux `i -> 1 `i 140  ]
+{
+"388
+[e = *U + &U _cabin_call * -> -> _current_floor `uc `ux -> -> # *U &U _cabin_call `ui `ux -> -> 0 `i `c ]
+"389
+[e ( _call_min ..  ]
+"390
+}
+[e $U 141  ]
+"391
+[e :U 140 ]
+{
+"392
+[e = *U + &U _cabin_call * -> -> _current_floor `uc `ux -> -> # *U &U _cabin_call `ui `ux -> -> 0 `i `c ]
+"393
+[e ( _call_max ..  ]
+"394
+}
+[e :U 141 ]
+"395
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"396
+}
+[e :U 139 ]
+"397
+[e :U 138 ]
+[e $ ! && < -> _current_floor `i -> _destination_floor `i != -> _destination_floor `i -U -> 1 `i 142  ]
+"398
+[e ( _call_max ..  ]
+[e $U 143  ]
+"399
+[e :U 142 ]
+[e $ ! && > -> _current_floor `i -> _destination_floor `i != -> _destination_floor `i -U -> 1 `i 144  ]
+"400
+[e ( _call_min ..  ]
+[e :U 144 ]
+"401
+[e :U 143 ]
+[e $ ! == -> _destination_floor `i -U -> 1 `i 145  ]
+"402
+[e ( _max_prob_floor ..  ]
+[e :U 145 ]
+"403
+[e :UE 120 ]
+}
+"405
+[v _main `(v  1 ef ]
+{
+[e :U _main ]
+[f ]
+"406
+[e ( _initialize ..  ]
+"407
+[e = _hour -> -> 0 `i `c ]
+"408
+[e = _counter2 -> 3000 `i ]
+"409
+[e = _prob_move -> -> 0 `i `b ]
+"410
+[e = _current_floor -> -> 0 `i `c ]
+"411
+[e = _destination_floor -> -U -> 1 `i `c ]
+"412
+[e = _i -> -U -> 10 `i `c ]
+"413
+[e :U 148 ]
+{
+"414
+[e ( _button_press ..  ]
+"415
+[e $ ! && != -> _button `i -U -> 1 `i != -> _button `i -> 7 `i 150  ]
+{
+"416
+[e = *U + &U _floor_call * -> -> _floor_index `uc `ux -> -> # *U &U _floor_call `ui `ux _floor_direction ]
+"417
+[e = _destination_floor _floor_index ]
+"418
+}
+[e :U 150 ]
+"419
+[e $U 151  ]
+[e :U 152 ]
+{
+"420
+[e ( _moving ..  ]
+"421
+[e = _i -> -U -> 10 `i `c ]
+"422
+}
+[e :U 151 ]
+"419
+[e $ != -> _destination_floor `i -U -> 1 `i 152  ]
+[e :U 153 ]
+"423
+[e $ ! == -> _i `i -U -> 10 `i 154  ]
+{
+"424
+[e = _i -> -U -> 9 `i `c ]
+"425
+[e ( _cmd (1 -> -> 1 `i `uc ]
+"426
+[e = _temp -> + -> -> _current_floor `i `ui -> 48 `ui `uc ]
+"427
+[e ( _disp_string (1 &U _stopped_msg ]
+"428
+[e ( _disp_string (1 -> -> 0 `i `*Cuc ]
+"429
+}
+[e :U 154 ]
+"430
+[e ( _max_prob_floor ..  ]
+"431
+}
+[e :U 147 ]
+"413
+[e $U 148  ]
+[e :U 149 ]
+"432
+[e :UE 146 ]
+}
